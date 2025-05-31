@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hrichik Khandait | Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (latest) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 16px; /* Increased top padding to ensure visibility */
+    }
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .profile h1.typing {
+      font-size: 2.7rem;
+      white-space: normal; /* Adjusted to allow wrapping if needed */
+      overflow: hidden;
+      border-right: 3px solid white;
+      width: auto; /* Changed to auto for full visibility */
+      max-width: 100%; /* Ensures it fits within container */
+      animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .profile img {
+      width: 220px;
+      max-width: 80vw;
+      border-radius: 20px;
+      box-shadow: 0 0 25px cyan;
+    }
+    .tagline {
+      font-size: 1.3rem;
+      margin: 48px 0;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: flyIn 1.5s 0.5s ease-in-out forwards;
+    }
+    @keyframes flyIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 32px;
+      margin: 48px 0;
+    }
+    .social {
+      background: #222;
+      border-radius: 15px;
+      color: #fff;
+      text-align: center;
+      font-size: 1.15rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px #333;
+      transition: box-shadow 0.4s, transform 0.4s;
+      padding: 24px 12px;
+      opacity: 0;
+      transform: translateY(100px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-height: 64px;
+      position: relative;
+    }
+    .social .icon-before {
+      font-size: 2.0rem;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .social .icon-after {
+      font-size: 1.6rem;
+      margin-left: 10px;
+      flex-shrink: 0;
+    }
+    .social:hover {
+      box-shadow: 0 0 20px cyan;
+      transform: scale(1.05);
+    }
+    /* Brand colors */
+    .social.linkedin { background: #0077b5; }
+    .social.gmail { background: #D44638; }
+    .social.x { background: #1DA1F2; }
+    .social.facebook { background: #3b5998; }
+    .social.instagram { background: #E1306C; }
+    .social.discord { background: #7289da; }
+    .social.github { background: #333; }
+    .social.book { background: #ffcc00; color: #222; }
+    /* Odometer (visitor counter) styles */
+    .odometer-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 64px 0 48px 0;
+      gap: 18px;
+    }
+    .odometer {
+      display: flex;
+      background: #222;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #fff4;
+      padding: 8px 18px;
+      gap: 5px;
+    }
+    .odometer-digit {
+      background: #111;
+      color: #eee;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2.3em;
+      width: 32px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      border: 2px solid #333;
+      box-shadow: 0 2px 8px #0008 inset;
+      position: relative;
+      overflow: hidden;
+    }
+    .odometer-digit.animate {
+      animation: digitRoll 0.5s;
+    }
+    @keyframes digitRoll {
+      0% { transform: translateY(100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .odometer-label {
+      text-align: center;
+      font-size: 1.1em;
+      color: #aaa;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      .container { padding: 24px 2vw; }
+      .profile img { width: 140px; }
+      .profile h1.typing { font-size: 1.5rem; }
+      .tagline { font-size: 1.05rem; }
+      .odometer-digit { font-size: 1.3em; width: 22px; height: 32px; }
+      .socials { gap: 18px; }
+      .social { font-size: 1rem; min-height: 50px; padding: 14px 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Profile Section -->
+    <div class="profile">
+      <h1 class="typing">Hi! I am Hrichik Khandait, nice to meet you 🤝</h1>
+      <img src="imgone.jpg" alt="Hrichik Khandait">
+    </div>
+    <!-- Tagline -->
+    <p class="tagline">Hey, I'm excited to connect with you! 🌟 Let's chat, share ideas, and make things happen! 🚀🤝</p>
+    <!-- Socials -->
+    <div class="socials" id="socialList">
+      <div class="social linkedin" onclick="window.open('https://www.linkedin.com/in/hrichik07/','_blank')">
+        <span>LinkedIn</span>
+        <i class="fab fa-linkedin icon-after"></i>
+      </div>
+      <div class="social gmail" onclick="window.open('mailto:hrichik2006@gmail.com','_blank')">
+        <span>Gmail</span>
+        <i class="fas fa-envelope icon-after"></i>
+      </div>
+      <div class="social x" onclick="window.open('https://x.com/HrichikKhandait','_blank')">
+        <span>X (Twitter)</span>
+        <i class="fab fa-x-twitter icon-after"></i>
+      </div>
+      <div class="social facebook" onclick="window.open('https://facebook.com/hrichik.khandait','_blank')">
+        <span>Facebook</span>
+        <i class="fab fa-facebook-f icon-after"></i>
+      </div>
+      <div class="social instagram" onclick="window.open('https://instagram.com/hrichikkhandait07','_blank')">
+        <span>Instagram</span>
+        <i class="fab fa-instagram icon-after"></i>
+      </div>
+      <div class="social discord" onclick="window.open('https://discord.com/users/hrichikkhandait','_blank')">
+        <span>Discord</span>
+        <i class="fab fa-discord icon-after"></i>
+      </div>
+      <div class="social github" onclick="window.open('https://github.com/Hrichikcoder','_blank')">
+        <span>GitHub</span>
+        <i class="fab fa-github icon-after"></i>
+      </div>
+      <div class="social book" onclick="window.open('https://buymeacoffee.com/hrichik07','_blank')">
+        <span>Buy Me a Book</span>
+        <i class="fas fa-book icon-after"></i>
+      </div>
+      <div class="social telegram" style="background:#0088cc;" onclick="window.open('https://t.me/hrichik07','_blank')">
+    <span>Telegram</span>
+    <i class="fab fa-telegram-plane icon-after"></i>
+    </div>
+     </div>
+    <!-- Odometer Visitor Counter -->
+    <div class="odometer-wrap">
+      <div class="odometer" id="odometer"></div>
+      <div class="odometer-label">Total Visitors</div>
+    </div>
+  </div>
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Scroll to Top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    style="position:fixed;bottom:30px;right:30px;background:cyan;padding:10px 15px;border:none;border-radius:10px;color:black;font-weight:bold;box-shadow:0 0 10px cyan;z-index:100;">
+    Back to Top
+  </button>
+  <script>
+    // Fly-in animation for social cards on scroll
+    const socials = document.querySelectorAll('.social');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.2 });
+    socials.forEach(card => observer.observe(card));
+
+    // Odometer Visitor Counter using Local Storage for simulation
+    function setOdometer(number) {
+      const odometer = document.getElementById('odometer');
+      const digits = String(number).padStart(6, '0').split('');
+      odometer.innerHTML = '';
+      digits.forEach(d => {
+        const span = document.createElement('span');
+        span.className = 'odometer-digit animate';
+        span.textContent = d;
+        odometer.appendChild(span);
+      });
+    }
+
+    // Use local storage to simulate visitor count (increments per visit on the same browser)
+    let visitorCount = localStorage.getItem('visitorCount');
+    if (!visitorCount) {
+      visitorCount = 1; // Starting point for the counter set to 1
+    } else {
+      visitorCount = parseInt(visitorCount, 10);
+    }
+    visitorCount += 1; // Increment on page load
+    localStorage.setItem('visitorCount', visitorCount);
+    setOdometer(visitorCount);
+
+    /*
+    // Optional: For real visitor tracking, integrate a third-party service or backend API.
+    // Example using a free counter service (uncomment and replace with actual API if desired):
+    fetch('https://api.countapi.xyz/hit/yourwebsite.com/visits')
+      .then(response => response.json())
+      .then(data => {
+        setOdometer(data.value);
+      })
+      .catch(() => {
+        setOdometer(1); // Fallback if API fails
+      });
+    */
+  </script>
+</body>
+</html>
